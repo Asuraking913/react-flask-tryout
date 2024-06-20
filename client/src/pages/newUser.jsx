@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from '../components /nav'
 import { useState } from 'react'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Create() {
 
@@ -10,6 +11,7 @@ function Create() {
     const [userEmail, setUserEmail] = useState("");
     const [fullName, setFullName] = useState("")
     const [msg, setMsg] = useState(false)
+    const navigate = useNavigate()
 
 
     const handleSubmit = async (event) => {
@@ -32,6 +34,8 @@ function Create() {
 
             }, 6000)
         }
+
+        navigate("/login")
     }
 
   return (
